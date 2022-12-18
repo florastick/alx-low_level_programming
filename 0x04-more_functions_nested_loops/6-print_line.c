@@ -3,6 +3,7 @@
 /**
  * print_line - Draws a straight line using a character _.
  * @n: The numbers of _ characters to be printed out
+ * Return: Always 0.
 */
 void print_line(int n)
 {
@@ -18,4 +19,5 @@ void print_line(int n)
 		c++;
 	}
 	_putchar('\n');
+	return (0);
 }
