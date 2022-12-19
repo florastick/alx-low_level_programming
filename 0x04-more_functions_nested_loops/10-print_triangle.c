@@ -2,35 +2,29 @@
 
 /**
  * print_triangle - prints a triangle
- * @size : integer type
+ * @size : An input integer
  * Return: Always 0.
 */
 
 void print_triangle(int size)
 {
-	int i = 1, ii;
+	int i = 0, j, n = size - 1;
 
-	while (i <= size && size > 0)
+	if (size > 0)
 	{
-		ii = 0;
-		while (ii < -i)
-		{
-			_putchar(' ');
-			ii++;
-		}
-		ii = 0;
-		while (ii < i)
-		{
-			_putchar('#');
-			ii++;
-		}
-
-		_putchar('\n');
-		i++;
-	}
-	if (i == 1)
+	for (; i < size; i++)
 	{
-		_putchar('\n');
+	for (j = 0; j < size; j++)
+	{
+	if (j < n)
+	_putchar(' ');
+	else
+	_putchar('#');
 	}
+	n--;
+	_putchar('\n');
+	}
+	}
+	else
+	_putchar('\n');
 }
-
