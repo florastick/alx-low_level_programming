@@ -3,24 +3,24 @@
 #include <time.h>
 
 /**
- * main - main body
- * Return: All good
+ * main - generates keygen.
+ * Return: Always 0.
 */
 
 int main(void)
 {
-	int myrand;
-	int count;
-	int total;
+	int r = 0, c = 0;
+	time_t t;
 
-	srand(time(NULL));
-	for (count = 0, total = 2772; total > 122; count++)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-		myrand = (rand() % 127);
-		printf("%c", myrand);
-		total -= myrand;
+	r = rand() % 128;
+	if ((c + r) > 2772)
+	break;
+	c = c + r;
+	printf("%c", r);
 	}
-	printf("%c", total);
-
+	printf("%c\n", (2772 - c));
 	return (0);
 }
